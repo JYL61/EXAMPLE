@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE owl [
+     <!ENTITY vin  "http://www.w3.org/2001/sw/WebOnt/guide-src/wine#" >
+     <!ENTITY food "http://www.w3.org/2001/sw/WebOnt/guide-src/food#" >
+     <!ENTITY xsd  "http://www.w3.org/2001/XMLSchema#" >
+   ]>
+
+<rdf:RDF
+  xmlns     = "http://www.w3.org/2001/sw/WebOnt/guide-src/food#"
+  xmlns:food= "http://www.w3.org/2001/sw/WebOnt/guide-src/food#"
+  xml:base  = "http://www.w3.org/2001/sw/WebOnt/guide-src/food#"
+  xmlns:vin = "http://www.w3.org/2001/sw/WebOnt/guide-src/wine#"
+  xmlns:owl = "http://www.w3.org/2002/07/owl#"
+  xmlns:rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs= "http://www.w3.org/2000/01/rdf-schema#">
+
+  <owl:Ontology rdf:about="">
+    <rdfs:comment>
+      Derived from the DAML Wine ontology at 
+      http://ontolingua.stanford.edu/doc/chimaera/ontologies/wines.daml
+      Substantially modified.
+    </rdfs:comment>
+  </owl:Ontology>
+
+  <owl:Class rdf:ID="ConsumableThing" />
+
+  <owl:Class rdf:ID="NonConsumableThing">
+    <owl:complementOf rdf:resource="#ConsumableThing" />
+  </owl:Class>
+
+  <owl:Class rdf:ID="EdibleThing">
+    <rdfs:subClassOf rdf:resource="#ConsumableThing" />
+  </owl:Class>
+  
